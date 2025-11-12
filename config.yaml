@@ -13,6 +13,6 @@ model_information:
   # uses at runtime during inference
   inference_parameters:
     temperature: 0.1
-    max_tokens: 4096  
+    max_tokens: 8196 
     top_p: 0.92
     caching: true

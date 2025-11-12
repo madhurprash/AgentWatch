@@ -3,19 +3,19 @@ agents:
   ambient_agent:
     name: ambient_agent
     entrypoint: /Users/madhurpt/Desktop/ambient_agent/ambient_agent.py
-    deployment_type: direct_code_deploy
-    runtime_type: PYTHON_3_12
+    deployment_type: container
+    runtime_type: null
     platform: linux/arm64
-    container_runtime: null
+    container_runtime: none
     source_path: /Users/madhurpt/Desktop/ambient_agent
     aws:
-      execution_role: arn:aws:iam::218208277580:role/AmazonBedrockAgentCoreSDKRuntime-us-west-2-51820286cd
-      execution_role_auto_create: false
+      execution_role: arn:aws:iam::218208277580:role/agentcore-agentcore_strands-role
+      execution_role_auto_create: true
       account: '218208277580'
       region: us-west-2
-      ecr_repository: null
+      ecr_repository: 218208277580.dkr.ecr.us-west-2.amazonaws.com/bedrock-agentcore-ambient_agent
       ecr_auto_create: false
-      s3_path: s3://bedrock-agentcore-codebuild-sources-218208277580-us-west-2
+      s3_path: null
       s3_auto_create: false
       network_configuration:
         network_mode: PUBLIC
@@ -28,13 +28,13 @@ agents:
         idle_runtime_session_timeout: null
         max_lifetime: null
     bedrock_agentcore:
-      agent_id: ambient_agent-GdSzEe2MzI
-      agent_arn: arn:aws:bedrock-agentcore:us-west-2:218208277580:runtime/ambient_agent-GdSzEe2MzI
-      agent_session_id: 24bf2c4e-3a70-4415-b641-74d5755f3b2a
+      agent_id: ambient_agent-izQRtrADde
+      agent_arn: arn:aws:bedrock-agentcore:us-west-2:218208277580:runtime/ambient_agent-izQRtrADde
+      agent_session_id: null
     codebuild:
-      project_name: null
-      execution_role: null
-      source_bucket: null
+      project_name: bedrock-agentcore-ambient_agent-builder
+      execution_role: arn:aws:iam::218208277580:role/AmazonBedrockAgentCoreSDKCodeBuild-us-west-2-51820286cd
+      source_bucket: bedrock-agentcore-codebuild-sources-218208277580-us-west-2
     memory:
       mode: NO_MEMORY
       memory_id: null

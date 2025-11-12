@@ -9,6 +9,7 @@ bedrock-agentcore-starter-toolkit
 langchain-core
 langchain-aws
 langgraph
+langsmith
 
 # Configuration and utilities
 pyyaml

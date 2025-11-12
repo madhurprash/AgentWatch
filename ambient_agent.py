@@ -6,6 +6,7 @@ import logging
 from utils import *
 from tools import *
 from constants import *
+from langsmith import traceable
 from botocore.config import Config
 from typing import Dict, List, Any
 from langchain_aws import ChatBedrock
@@ -83,6 +84,7 @@ monitoring_agent = create_agent(
 
 logger.info("Ambient monitoring agent created successfully with checkpointing enabled")
 
+@traceable
 @app.entrypoint
 def agent_handler(payload: Dict[str, Any]) -> str:
     """
